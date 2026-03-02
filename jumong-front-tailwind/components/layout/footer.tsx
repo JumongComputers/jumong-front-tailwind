@@ -8,28 +8,30 @@ import { Button } from "../ui/Button";
 
 export const Footer = () => {
   return (
-    <footer className="w-full bg-[#222357] text-white">
+    <footer className="w-full bg-[#224b57f8] text-white">
       <div
         className="
           container mx-auto flex flex-col md:flex-row md:flex-wrap gap-10 md:gap-6 justify-between px-4 lg:px-0 py-16"
       >
         {/* 1 */}
         <div className="font-normal text-[16px] flex flex-col gap-3 md:w-[45%] lg:w-auto">
-          <p>&copy; {new Date().getFullYear()} Rock Foundation Church</p>
+          <p>&copy; {new Date().getFullYear()} JMG Computers</p>
 
           <div className="flex items-center gap-2">
             <HiPhone className="text-lg" />
-            <span>+234 456 346 4878</span>
+            <span>+234 907 6381 843</span>
           </div>
 
           <div className="flex items-center gap-2 max-w-xs leading-tight">
             <HiLocationMarker className="text-lg" />
-            <span>Tekobo junction, Idi-Aba Abeokuta, Ogun State, Nigeria</span>
+            <span>Otigba Street Computer Village Ikeja,Lagos
+              Olokuta, Idi-Aba Abeokuta, Ogun State, Nigeria
+              </span>
           </div>
 
           <div className="flex items-center gap-2">
             <HiMail className="text-lg" />
-            <span>info@rockfoundationchurch.org</span>
+            <span>jumongcomputers@gmail.com</span>
           </div>
         </div>
 
