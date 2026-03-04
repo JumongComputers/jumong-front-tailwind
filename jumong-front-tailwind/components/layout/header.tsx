@@ -48,15 +48,17 @@ export const Header = () => {
       <nav className="fixed top-0 left-0 w-full bg-white text-[#2A1870] py-3 z-50 shadow opacity-300 backdrop-blur-sm">
         <div className="container mx-auto flex justify-between items-center px-2 lg:px-0 font-medium text-[16px]">
           {/* Logo */}
-          <Link href="/">
+          <Link href="/" className="flex gap-2 items-center font-bold ">
             <div>
               <Image
                 src="/jumong-logo.jpeg"
                 alt="logo"
+                className="border-md"
                 width={40}
                 height={40}
               />
             </div>
+            <span>JMG Computers</span>
           </Link>
 
           {/* Desktop Links */}

@@ -1,3 +1,4 @@
+import { FeaturedProducts } from "@/components/layout/featuredProduct";
 import { Hero } from "@/components/layout/hero";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
       {/* HERO SECTION */}
       <section className="w-full">
         <Hero />
+        <FeaturedProducts/>
       </section>
 
       {/* NEXT SECTIONS (future) */}

@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const sliderImages: string[] = [
-  "/b.jpg",
+  "/g.jpg",
   "/c.jpg",
   "/d.jpg",
 ];
@@ -12,32 +12,42 @@ const sliderImages: string[] = [
 export const Hero = () => {
   const [current, setCurrent] = useState<number>(0);
 
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % sliderImages.length);
-  };
+  // Auto-slide every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % sliderImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="w-full mt-[120px]">
       <div className="container mx-auto px-2">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 h-[420px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 h-[420px] md:h-[500px]">
           
           {/* LEFT — SLIDER */}
           <div className="relative h-full overflow-hidden rounded-lg">
+            {/* Current Slide */}
             <Image
               src={sliderImages[current]}
-              alt="Hero slider"
+              alt={`Hero slider ${current + 1}`}
               fill
-              className="object-cover"
+              className="object-cover transition-all duration-700"
               priority
             />
 
-            {/* Slider Controls */}
-            <button
-              onClick={nextSlide}
-              className="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded text-sm"
-            >
-              Next
-            </button>
+            {/* THUMBNAIL INDICATORS */}
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+              {sliderImages.map((_, index) => (
+                <span
+                  key={index}
+                  onClick={() => setCurrent(index)}
+                  className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300
+                    ${current === index ? "bg-blue-600 scale-110" : "bg-white/60"}`}
+                />
+              ))}
+            </div>
           </div>
 
           {/* RIGHT — STATIC IMAGES */}
