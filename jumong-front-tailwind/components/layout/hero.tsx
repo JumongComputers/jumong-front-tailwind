@@ -22,7 +22,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="w-full mt-[120px]">
+    <section className="w-full mt-[120px] mb-[20px]">
       <div className="container mx-auto px-2">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 h-[420px] md:h-[500px]">
           

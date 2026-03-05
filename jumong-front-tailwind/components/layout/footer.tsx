@@ -8,10 +8,10 @@ import { Button } from "../ui/Button";
 
 export const Footer = () => {
   return (
-    <footer className="w-full bg-[#224b57f8] text-white">
+    <footer className="w-full bg-[#2A1870] text-white">
       <div
         className="
-          container mx-auto flex flex-col md:flex-row md:flex-wrap gap-10 md:gap-6 justify-between px-4 lg:px-0 py-16"
+          container mx-auto flex flex-col md:flex-row md:flex-wrap gap-10 md:gap-6 justify-between px-4 lg:px-0 py-4"
       >
         {/* 1 */}
         <div className="font-normal text-[16px] flex flex-col gap-3 md:w-[45%] lg:w-auto">
