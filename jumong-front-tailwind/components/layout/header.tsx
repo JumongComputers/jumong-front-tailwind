@@ -10,7 +10,7 @@ import { FiSearch } from "react-icons/fi";
 
 const menuItems = [
   { label: "Home", href: "/" },
-  { label: "Products", href: "/products" },
+  { label: "Products", href: "/product" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Contact", href: "/contact" },
 ];

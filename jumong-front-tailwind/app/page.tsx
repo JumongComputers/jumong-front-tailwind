@@ -1,6 +1,7 @@
 import { FeaturedProducts } from "@/components/layout/featuredProduct";
 import { Hero } from "@/components/layout/hero";
 import { Portfolio } from "@/components/layout/portfolio";
+import { Services } from "@/components/layout/services";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <section className="w-full">
         <Hero />
         <FeaturedProducts/>
+        <Services/>
         <Portfolio/>
       </section>
 
