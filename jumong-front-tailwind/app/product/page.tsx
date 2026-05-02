@@ -1,4 +1,8 @@
-import { ProductGrid } from "@/components/products/ProductGrid";
+"use client";
+
+import ProductGrid from "@/components/products/ProductGrid";
+
+// import { ProductGrid } from "@/components/products/ProductGrid";
 
 export default function ProductsPage() {
   return (
