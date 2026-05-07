@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  turbopack: {
-    root: __dirname,
+  images: {
+    domains: ["res.cloudinary.com"], // ✅ allow Cloudinary
   },
 };
 

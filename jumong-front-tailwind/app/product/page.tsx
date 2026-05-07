@@ -1,6 +1,7 @@
 "use client";
 
 import ProductGrid from "@/components/products/ProductGrid";
+import ProductImageGallery from "@/components/products/ProductImageGallery";
 
 // import { ProductGrid } from "@/components/products/ProductGrid";
 
@@ -35,6 +36,11 @@ export default function ProductsPage() {
 
         {/* Products */}
         <ProductGrid />
+
+        {/* <ProductImageGallery
+  images={product.images}
+  alt={product.name}
+/> */}
 
       </div>
 

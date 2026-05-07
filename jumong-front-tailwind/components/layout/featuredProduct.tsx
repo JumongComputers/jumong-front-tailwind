@@ -51,7 +51,7 @@ export const FeaturedProducts = () => {
 
         <div className="mt-10 text-center ">
           <Link
-            href="/products"
+            href="/product"
             className="inline-block px-6 py-3 bg-[#2A1870] text-white rounded-md hover:bg-gray-800 transition"
           >
             View All Products
