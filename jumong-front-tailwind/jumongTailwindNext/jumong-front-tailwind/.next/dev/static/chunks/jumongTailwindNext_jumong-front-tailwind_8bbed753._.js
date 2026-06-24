@@ -1,30 +1,4 @@
 (globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
-"[project]/jumongTailwindNext/jumong-front-tailwind/store/hooks.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
-"use strict";
-
-__turbopack_context__.s([
-    "useAppDispatch",
-    ()=>useAppDispatch,
-    "useAppSelector",
-    ()=>useAppSelector
-]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$jumongTailwindNext$2f$jumong$2d$front$2d$tailwind$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/jumongTailwindNext/jumong-front-tailwind/node_modules/react-redux/dist/react-redux.mjs [app-client] (ecmascript)");
-var _s = __turbopack_context__.k.signature();
-;
-const useAppDispatch = ()=>{
-    _s();
-    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$jumongTailwindNext$2f$jumong$2d$front$2d$tailwind$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDispatch"])();
-};
-_s(useAppDispatch, "jI3HA1r1Cumjdbu14H7G+TUj798=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$jumongTailwindNext$2f$jumong$2d$front$2d$tailwind$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDispatch"]
-    ];
-});
-const useAppSelector = __TURBOPACK__imported__module__$5b$project$5d2f$jumongTailwindNext$2f$jumong$2d$front$2d$tailwind$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"];
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
-}
-}),
 "[project]/jumongTailwindNext/jumong-front-tailwind/app/utils/image.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -365,4 +339,4 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 }),
 ]);
 
-//# sourceMappingURL=jumongTailwindNext_jumong-front-tailwind_b8e29e99._.js.map
+//# sourceMappingURL=jumongTailwindNext_jumong-front-tailwind_8bbed753._.js.map

@@ -11,10 +11,10 @@ export const Footer = () => {
     <footer className="w-full bg-[#2A1870] text-white">
       <div
         className="
-          container mx-auto flex flex-col md:flex-row md:flex-wrap gap-10 md:gap-6 justify-between px-4 lg:px-0 py-4"
+          container mx-auto flex flex-col md:flex-row md:flex-wrap gap-1 md:gap-6 justify-between px-4 lg:px-0 py-4"
       >
         {/* 1 */}
-        <div className="font-normal text-[16px] flex flex-col gap-3 md:w-[45%] lg:w-auto">
+        <div className="font-normal text-[16px] flex flex-col gap-3 md:w-[45%] lg:w-auto border-b border-dashed border-amber-50 pb-4 md:border-none" >
           <p>&copy; {new Date().getFullYear()} JMG Computers</p>
 
           <div className="flex items-center gap-2">
@@ -36,7 +36,7 @@ export const Footer = () => {
         </div>
 
         {/* 2 */}
-        <div className="text-center font-normal">
+        <div className=" font-normal border-b border-dashed border-amber-50 pb-4 md:border-none">
           <h4 className="text-[16px]">Quick Links</h4>
           <ul className="text-[14px] pt-2">
             {/* <li>About Us</li>
@@ -50,9 +50,9 @@ export const Footer = () => {
         </div>
 
         {/* 3 */}
-        <div className="md:w-[30%] text-center lg:w-auto">
+        <div className="md:w-[30%] lg:w-auto border-b border-dashed border-amber-50 pb-4 md:border-none">
           <h4 className="font-normal pb-2 text-[16px]">Connect With Us</h4>
-          <div className="flex gap-6 justify-center items-center">
+          <div className="flex gap-6 items-center">
             <MdFacebook size={24} color="#73B834" />
             <FaInstagram size={24} color="#73B834" />
             <FiYoutube size={24} color="#73B834" />
@@ -60,7 +60,7 @@ export const Footer = () => {
         </div>
 
         {/* 4 */}
-        <div className="gap-2 flex flex-col md:w-full lg:w-[35%]">
+        <div className="gap-2 flex flex-col md:w-full lg:w-[35%] border-b border-dashed border-amber-50 pb-4 md:border-none">
           <h1 className="font-bold text-[13px] md:text-[16px]">
             Subscribe to get Latest Updates and News
           </h1>

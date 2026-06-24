@@ -51,8 +51,15 @@ const ProductGrid = () => {
         const productId = product._id;
 
         // ✅ Correct field (images array)
-        const primaryImage =
-          product.images?.[0] || "/placeholder.png";
+       const rawImage = product.images?.[0];
+
+const primaryImage =
+  rawImage &&
+  (rawImage.startsWith("http://") ||
+    rawImage.startsWith("https://") ||
+    rawImage.startsWith("/"))
+    ? rawImage
+    : "/d.jpg"; 
 
         return (
           <Link href={`/product/${productId}`} key={productId}>

@@ -43,9 +43,7 @@ const ProductForm = () => {
       return true;
     });
 
-    const newPreviews = validFiles.map((file) =>
-      URL.createObjectURL(file)
-    );
+    const newPreviews = validFiles.map((file) => URL.createObjectURL(file));
 
     setImages((prev) => [...prev, ...validFiles]);
     setPreviewUrls((prev) => [...prev, ...newPreviews]);
@@ -68,58 +66,88 @@ const ProductForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!name.trim()) return toast.error("Product name is required");
-    if (!price || Number(price) <= 0)
-      return toast.error("Enter valid price");
-    if (images.length === 0)
-      return toast.error("Add at least one image");
+    console.log("🚀 Submit clicked");
+
+    if (!name.trim()) {
+      toast.error("Product name is required");
+      return;
+    }
+
+    if (!price || Number(price) <= 0) {
+      toast.error("Enter valid price");
+      return;
+    }
+
+    if (images.length === 0) {
+      toast.error("Add at least one image");
+      return;
+    }
 
     setLoading(true);
 
     try {
-      const token = localStorage.getItem("token");
+      const auth = JSON.parse(localStorage.getItem("user") || "{}");
+
+      const token = auth.token;
+
+      console.log("TOKEN:", token);
 
       if (!token) {
-        toast.error("You are not authorized");
+        toast.error("Login required");
         return;
       }
 
-      // ✅ FormData
       const formData = new FormData();
+
       formData.append("name", name);
       formData.append("price", price);
 
-      images.forEach((img) => {
-        formData.append("images", img);
+      images.forEach((file) => {
+        formData.append("images", file);
       });
 
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/products`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          body: formData,
-        }
+      console.log(
+        "Uploading files:",
+        images.map((f) => f.name),
       );
 
-      if (!res.ok) throw new Error("Product creation failed");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      });
 
-      toast.success("Product created 🚀");
+      console.log("STATUS:", res.status);
 
-      // ✅ Reset safely
-      previewUrls.forEach((url) => URL.revokeObjectURL(url));
+      const data = await res.json();
+
+      console.log("RESPONSE:", data);
+
+      if (!res.ok) {
+        throw new Error(data.message || "Failed to create product");
+      }
+
+      toast.success("Product created successfully");
 
       setName("");
       setPrice("");
       setImages([]);
+
+      previewUrls.forEach((url) => URL.revokeObjectURL(url));
+
       setPreviewUrls([]);
 
-      router.push("/admin");
+      setTimeout(() => {
+        router.push("/admin");
+      }, 1000);
     } catch (error) {
-      console.error(error);
-      toast.error("Something went wrong ❌");
+      console.error("PRODUCT ERROR:", error);
+
+      toast.error(
+        error instanceof Error ? error.message : "Something went wrong",
+      );
     } finally {
       setLoading(false);
     }
@@ -128,7 +156,7 @@ const ProductForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-xl mx-auto space-y-5 bg-white p-6 rounded-xl shadow"
+      className="max-w-xl mx-auto space-y-5 bg-white p-6 rounded-xl shadow "
     >
       <h2 className="text-lg font-semibold">Add New Product</h2>
 
@@ -169,10 +197,7 @@ const ProductForm = () => {
           onChange={(e) => handleFiles(e.target.files)}
         />
 
-        <label
-          htmlFor="fileInput"
-          className="text-yellow-500 cursor-pointer"
-        >
+        <label htmlFor="fileInput" className="text-yellow-500 cursor-pointer">
           Browse files
         </label>
       </div>
@@ -182,10 +207,7 @@ const ProductForm = () => {
         <div className="grid grid-cols-3 gap-3">
           {previewUrls.map((url, index) => (
             <div key={index} className="relative">
-              <img
-                src={url}
-                className="h-24 w-full object-cover rounded"
-              />
+              <img src={url} className="h-24 w-full object-cover rounded" />
 
               <button
                 type="button"

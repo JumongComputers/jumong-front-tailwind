@@ -52,8 +52,15 @@ const AdminProductTable = () => {
 
         <tbody>
           {items.map((product) => {
-            const image =
-              product.images?.[0] || "/placeholder.png";
+             const rawImage = product.images?.[0];
+
+const primaryImage =
+  rawImage &&
+  (rawImage.startsWith("http://") ||
+    rawImage.startsWith("https://") ||
+    rawImage.startsWith("/"))
+    ? rawImage
+    : "/d.jpg"; 
 
             return (
               <tr
@@ -63,7 +70,7 @@ const AdminProductTable = () => {
                 <td className="p-4">
                   <div className="relative h-16 w-16 rounded overflow-hidden">
                     <Image
-                      src={image}
+                      src={primaryImage}
                       alt={product.name}
                       fill
                       className="object-cover"

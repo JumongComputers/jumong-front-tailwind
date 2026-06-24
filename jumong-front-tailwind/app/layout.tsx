@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/footer";
 // import { Provider } from "react-redux";
 // import { store } from "@/store";
 import { Providers } from "./providers";
+import AuthProvider from "@/store/slices/providers/AuthProvider";
 // import { Navbar } from "./shared/Navbar";
 
 const geistSans = Geist({
@@ -33,13 +34,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+         <Providers>
+        <Header />
        
-          <Header />
-          <Providers>
-          {children}
-          </Providers>
-          <Footer />
+          <AuthProvider>{children}</AuthProvider>
         
+        <Footer />
+        </Providers>
       </body>
     </html>
   );

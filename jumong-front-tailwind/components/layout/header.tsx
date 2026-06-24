@@ -79,7 +79,7 @@ export const Header = () => {
 
           {/* Desktop Login */}
           <Link
-            href="/login"
+            href="/auth/login"
             className="hidden md:flex items-center gap-2 px-3 py-1 rounded-md border border-transparent text-[#2A1870] hover:border-[#2A1870] hover:bg-[#2A1870] hover:text-white transition"
           >
             <MdLogin />
@@ -95,7 +95,7 @@ export const Header = () => {
         {/* Search Bar */}
         <form
           onSubmit={handleSubmit}
-          className="container mx-auto px-2 mt-3 pb-3 md:w-1/2"
+          className="container mx-auto px-2 mt-3 pb-3 hidden md:block md:w-1/2"
         >
           <div className="relative flex items-center border border-[#2A1870] rounded-md">
             <FiSearch className="absolute left-3 text-[#2A1870]" size={18} />
@@ -145,7 +145,7 @@ export const Header = () => {
             ))}
 
             <Link
-              href="/login"
+              href="/auth/login"
               onClick={closeMobileMenu}
               className="flex items-center gap-2 mt-3"
             >

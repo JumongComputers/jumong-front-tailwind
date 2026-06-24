@@ -31,9 +31,11 @@ export const fetchProducts = createAsyncThunk<
 
       if (!res.ok) {
         throw new Error("Failed to fetch products");
+        console.log('It did not fetch')
       }
 
       const data = await res.json();
+      console.log('It fetched successfully', data);
       return data.data;
     } catch (error: unknown) {
   if (error instanceof Error) {
